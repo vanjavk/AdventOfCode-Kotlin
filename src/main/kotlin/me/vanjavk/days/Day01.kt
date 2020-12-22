@@ -20,10 +20,8 @@ class Day01(private val input: String) {
 
     private fun part2(): Int {
         val numbers = input.lines().map { it.toInt() }.sorted()
-        val count = numbers.size - 1
+        var right = numbers.size - 1
         var left = 0
-        var right = count
-//        println(numbers)
         while (true) {
             for (middle in left + 1 until right - 1) {
                 val sum = numbers[left] + numbers[middle] + numbers[right]
