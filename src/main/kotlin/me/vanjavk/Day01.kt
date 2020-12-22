@@ -2,7 +2,7 @@ package me.vanjavk
 
 class Day01(private val input: String) {
     init {
-        println("Day 1 - part 11: ${part1()}")
+        println("Day 1 - part 1: ${part1()}")
 //        part1()
 //        part2()
     }
