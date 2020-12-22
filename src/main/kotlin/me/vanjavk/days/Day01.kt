@@ -1,5 +1,6 @@
 package me.vanjavk.days
 
+
 class Day01(private val input: String) {
     init {
         println("Day 1 - part 1: ${part1()}")
