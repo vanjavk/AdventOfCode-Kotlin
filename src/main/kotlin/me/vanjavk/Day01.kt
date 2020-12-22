@@ -5,21 +5,21 @@ import kotlin.system.measureTimeMillis
 
 class Day01(private val input: String) {
     init {
-        //println("Day 1 - part 1: ${part1()}")
-
-        part1()
-
+        println("Day 1 - part 1: ${part1()}")
+//        part1()
 //        part2()
     }
 
     private fun part1BAD(): Int {
         val complementaryMap = mutableMapOf<Int, Int>()
-        input.lines().map {
+        return input.lines().map {
             it.toInt().also { complementaryMap[2020 - it] = it }
-        }.forEach {
-            if (complementaryMap.containsKey(it)) return it * (2020 - it)
-        }
-        return -1
+            //        }.forEach {
+            //            if (complementaryMap.containsKey(it)) return it * (2020 - it)
+            //        }
+        }.firstOrNull {
+            complementaryMap.containsKey(it)
+        }?.let { it * (2020 - it) }!!
     }
 
     private fun part1(): Int =
@@ -30,7 +30,6 @@ class Day01(private val input: String) {
             }.first()
         }
 }
-
 //            return@map
 //        }.let {
 //            if (complementaryMap.containsKey(it)) return it
@@ -50,7 +49,6 @@ class Day01(private val input: String) {
 //        }
 
 //        numbers.let { if (complementSum[it]?.plus(it) == 2020) {return it }}
-
 //println(numbers)
 
 
