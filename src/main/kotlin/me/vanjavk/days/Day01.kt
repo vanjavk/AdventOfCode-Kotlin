@@ -1,4 +1,4 @@
-package me.vanjavk
+package me.vanjavk.days
 
 class Day01(private val input: String) {
     init {
@@ -14,19 +14,21 @@ class Day01(private val input: String) {
             //        }.forEach {
             //            if (complementaryMap.containsKey(it)) return it * (2020 - it)
             //        }
-        }.firstOrNull {
+        }.first {
             complementaryMap.containsKey(it)
-        }?.let { it * (2020 - it) }!!
+        }.let { it * (2020 - it) }
     }
 
     private fun part1(): Int =
         input.lines().map { it.toInt() }.sorted().run {
-            mapIndexedNotNull { idx, a ->
+            mapIndexedNotNull { _, a ->
                 this.firstOrNull { a + it == 2020 }
                     ?.let { a * it }
             }.first()
         }
 }
+
+
 //            return@map
 //        }.let {
 //            if (complementaryMap.containsKey(it)) return it
