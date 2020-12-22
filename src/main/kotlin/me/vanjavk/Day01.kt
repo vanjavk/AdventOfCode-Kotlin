@@ -1,8 +1,5 @@
 package me.vanjavk
 
-import kotlin.system.measureTimeMillis
-
-
 class Day01(private val input: String) {
     init {
         println("Day 1 - part 1: ${part1()}")
@@ -34,7 +31,6 @@ class Day01(private val input: String) {
 //        }.let {
 //            if (complementaryMap.containsKey(it)) return it
 //        }
-
 //        complementaryMap.forEach{k,v->println(k)}
 //    .let {
 //        println(it)
@@ -42,12 +38,9 @@ class Day01(private val input: String) {
 //            println(it)
 //            if (complementaryMap.containsKey(it)) return it }
 //    }
-
-
 //        fun getResult(): Pair<Int, Int> {
 //            numbers.forEach { if (complementSum[it]?.plus(it) == 2020) }
 //        }
-
 //        numbers.let { if (complementSum[it]?.plus(it) == 2020) {return it }}
 //println(numbers)
 
