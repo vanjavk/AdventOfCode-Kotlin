@@ -39,7 +39,6 @@ class Day01(private val input: String) {
                 }
             }
         }
-        return -1
     }
 
 
