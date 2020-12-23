@@ -1,17 +1,17 @@
 package me.vanjavk.days
 
 
-class Day01(private val input: String) {
-    init {
+object Day01 {
+    private lateinit var data: String
+    operator fun invoke(input: String)  {
+        data=input
         println("Day 1 - part 1: ${part1()}")
         println("Day 1 - part 2: ${part2()}")
-//        part1()
-//        part2()
     }
 
     private fun part1(): Int {
         val complementaryMap = mutableMapOf<Int, Int>()
-        return input.lines().map {
+        return data.lines().map {
             it.toInt().also { complementaryMap[2020 - it] = it }
         }.first {
             complementaryMap.containsKey(it)
@@ -19,7 +19,7 @@ class Day01(private val input: String) {
     }
 
     private fun part2(): Int {
-        val numbers = input.lines().map { it.toInt() }.sorted()
+        val numbers = data.lines().map { it.toInt() }.sorted()
         var right = numbers.size - 1
         var left = 0
         while (true) {
@@ -41,7 +41,7 @@ class Day01(private val input: String) {
 
 
     private fun part1BAD(): Int =
-        input.lines().map { it.toInt() }.sorted().run {
+        data.lines().map { it.toInt() }.sorted().run {
             mapIndexedNotNull { _, a ->
                 this.firstOrNull { a + it == 2020 }
                     ?.let { a * it }
